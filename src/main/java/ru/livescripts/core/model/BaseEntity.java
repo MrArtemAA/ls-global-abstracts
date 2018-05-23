@@ -2,7 +2,12 @@ package ru.livescripts.core.model;
 
 import org.apache.commons.lang3.StringUtils;
 
+import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
+
+@MappedSuperclass
 public abstract class BaseEntity implements Entity {
+    @Id
     private String id;
 
     public boolean isNew() {
