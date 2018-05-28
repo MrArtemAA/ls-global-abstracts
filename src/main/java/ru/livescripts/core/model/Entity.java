@@ -2,10 +2,10 @@ package ru.livescripts.core.model;
 
 import java.io.Serializable;
 
-public interface Entity extends Serializable {
+public interface Entity<ID> extends Serializable {
 
-    String getId();
-    void setId(final String id);
+    ID getId();
+    void setId(final ID id);
 
     boolean isNew();
 

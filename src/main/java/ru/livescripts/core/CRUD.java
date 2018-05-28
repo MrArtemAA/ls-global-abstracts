@@ -2,14 +2,13 @@ package ru.livescripts.core;
 
 import ru.livescripts.core.model.Entity;
 
-import java.util.List;
+public interface CRUD<T extends Entity<ID>, ID> {
 
-public interface CRUD<T extends Entity> {
-
-    T get(String id);
+    T get(ID id);
     T get(Acceptor<? extends T> acceptor);
-    List<? extends T> getList(Acceptor<? extends T> acceptor);
-    void save(T entity);
-    void delete(T entity);
+    Iterable<? extends T> getAll();
+    Iterable<? extends T> getSome(Acceptor<? extends T> acceptor);
+    T save(T entity);
+    boolean delete(ID id);
 
 }

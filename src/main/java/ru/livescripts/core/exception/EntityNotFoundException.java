@@ -5,7 +5,7 @@ import ru.livescripts.core.model.Entity;
 
 public class EntityNotFoundException extends RuntimeException {
 
-    public EntityNotFoundException(String id) {
+    public <ID> EntityNotFoundException(ID id) {
         super("id = " + id);
     }
 
